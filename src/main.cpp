@@ -37,7 +37,7 @@ void loop()
 {
   //อ่านค่าทุกๆ 200mS
   static unsigned long distance_fillter;
-  if ((millis() - distance_fillter) > 200)
+  if ((millis() - distance_fillter) > 150)
   {
     distance = sonar.ping_cm();
     distance_fillter = millis();
