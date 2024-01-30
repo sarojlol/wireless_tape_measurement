@@ -45,7 +45,7 @@ void loop()
 
   //ถ้าระยะทางที่อ่านไม่เท่าเดิมถึงจะupdateค่าลงจอLCD
   if (distance != last_distance){
-    if (distance < 380)
+    if (distance < MAX_DISTANCE - 20)
     {
       lcd.setCursor(10, 1);
       //ถ้าค่าตำกว่า 99 ให้ใส่ช่องว่างต่อท้ายช่องเดียว
@@ -63,7 +63,7 @@ void loop()
       lcd.print("CM");
     }
     //ถ้าค่าเกิน380ให้แสดงคำว่า OL (Over Range)
-    else if (distance >=380){
+    else if (distance >= MAX_DISTANCE - 20){
       lcd.setCursor(10, 1);
       lcd.print("OL     ");
     }
